@@ -34,7 +34,7 @@ img_YUV = cv2.cvtColor(img_BGR, cv2.COLOR_BGR2YUV)
 titles = ['BGR', 'RGB', 'GRAY', 'HSV', 'YCrCb', 'HLS', 'XYZ', 'LAB', 'YUV']  
 images = [img_BGR, img_RGB, img_GRAY, img_HSV, img_YCrCb,
           img_HLS, img_XYZ, img_LAB, img_YUV]  
-for i in xrange(9):  
+for i in range(9):
    plt.subplot(3, 3, i+1), plt.imshow(images[i], 'gray')  
    plt.title(titles[i])  
    plt.xticks([]),plt.yticks([])  

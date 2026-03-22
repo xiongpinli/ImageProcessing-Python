@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 #读取图片
 src1 = cv2.imread('test.jpg')
 src2 = cv2.imread('lena-hd.png')
-print src1.shape
-print src2.shape
+print(src1.shape)
+print(src2.shape)
 
 #图像融合
 result = cv2.addWeighted(src1, 1, src2, 1, 0)

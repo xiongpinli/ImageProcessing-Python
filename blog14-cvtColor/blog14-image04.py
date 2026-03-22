@@ -12,7 +12,7 @@ width = img.shape[1]
 
 #创建一幅图像
 grayimg = np.zeros((height, width, 3), np.uint8)
-print grayimg
+print(grayimg)
 
 #图像平均灰度处理方法
 for i in range(height):
