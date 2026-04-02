@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-# By:Eastmount CSDN 2021-03-12
 import cv2  
 import numpy as np  
 import matplotlib.pyplot as plt
  
 #读取图片
-img = cv2.imread('test.png')
+img = cv2.imread('test01.png')
 
 #灰度转换
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
