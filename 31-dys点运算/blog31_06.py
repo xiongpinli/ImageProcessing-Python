@@ -1,5 +1,4 @@
 #encoding:utf-8
-#By:Eastmount CSDN 2020-11-12
 import cv2  
 import numpy as np  
 import matplotlib.pyplot as plt

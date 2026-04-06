@@ -20,10 +20,15 @@ cv2.destroyAllWindows()
 #绕图像的中心旋转
 #源图像的高、宽 以及通道数
 rows, cols, channel = image.shape
-#函数参数：旋转中心 旋转度数 scale
-M = cv2.getRotationMatrix2D((cols/2, rows/2), 30, 1)
+# 参数	说明
+# center	旋转中心点坐标 (x, y)，通常设为图像的中心点 (cols/2, rows/2)
+# angle	旋转角度（单位：度）。正值表示逆时针旋转，负值表示顺时针旋转
+# scale	图像缩放因子。1.0 表示不缩放，小于 1 表示缩小，大于 1 表示放大
+
+M = cv2.getRotationMatrix2D((cols/2, rows/2), 30, 2)
 print("-----------生成二维旋转仿射变换矩阵------")
 print(M)
+
 #函数参数：原始图像 旋转参数 元素图像宽高
 img2 = cv2.warpAffine(image, M, (cols, rows))
 cv2.imshow("Rotation-before", image)
@@ -34,16 +39,20 @@ cv2.destroyAllWindows()
 #图像翻转
 img3 = cv2.flip(image, 0)  # 0 垂直翻转
 img4 = cv2.flip(image, 1)   # 水平翻转
+img41 = cv2.flip(image, -1)   # 水平翻转
+cv2.imshow("flip", image)
 cv2.imshow("flip-vertical", img3)
 cv2.imshow('flip-horizontal', img4)
+cv2.imshow("flip-d", img41)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 
 #图像缩小
+print(image.shape)
 img5 = cv2.resize(image, (200,100))
 #图像放大
-img6= cv2.resize(image, None, fx=1.1, fy=1.1)
+img6= cv2.resize(image, None, fx=2, fy=3)
 cv2.imshow("resize-before", image)
 cv2.imshow("resize-1", img5)
 cv2.imshow('resize-2', img6)

@@ -1,5 +1,5 @@
 #encoding:utf-8
-#By:Eastmount CSDN 2020-11-12
+
 import cv2  
 import numpy as np  
 import matplotlib.pyplot as plt
@@ -13,7 +13,7 @@ width = img.shape[1]
 
 #创建一幅图像
 grayimg = np.zeros((height, width, 3), np.uint8)
-print grayimg
+print(grayimg)
 
 #图像平均灰度处理方法
 for i in range(height):

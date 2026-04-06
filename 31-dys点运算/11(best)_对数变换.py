@@ -16,21 +16,22 @@ def log_plot(c):
 #对数变换
 def log(c, img):
     output = c * np.log(1.0 + img)
+    print(output)
     output = np.uint8(output + 0.5)
     return output
 
-#读取原始图像
-img = cv2.imread('2016-.png')
 
-#绘制对数变换曲线
-log_plot(42)
+if __name__ == '__main__':
+    #读取原始图像
+    img = cv2.imread('2016-.png')
+    #绘制对数变换曲线
+    log_plot(42)
+    #图像灰度对数变换  对数反转 g(x,y) = C*lg(1+f(x,y))
+    output = log(42, img)
 
-#图像灰度对数变换
-output = log(42, img)
-
-#显示图像
-cv2.imshow('Input', img)
-cv2.imshow('Output', output)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+    #显示图像
+    cv2.imshow('Input', img)
+    cv2.imshow('Output', output)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
